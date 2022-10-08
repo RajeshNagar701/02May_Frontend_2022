@@ -118,9 +118,11 @@ document.getElementById('mylocation').innerHTML=data;
 </form>  
 
 
-<h3 id="write">Hi raj</h3>
+<p id="innerHTML">Hi raj</p>
+<p id="innerText">Hi rajesh</p>
 <script>
-	document.getElementById('write').innerHTML="<h1>Hi Rajesh<h1>";  
+	document.getElementById('innerHTML').innerHTML="<h1>Hi Rajesh<h1>";  
+	document.getElementById('innerText').innerText="<h1>Hi Rajesh<h1>";  
 </script>
 
 <hr>
@@ -134,7 +136,7 @@ Strength:<span id="myloca">no strength</span>
 function validate() 
 {  
 	var msg;  
-	if(document.myForm1.userPass.value.length>5)
+	if(document.myForm1.userPass.value.length>5) // if(document.forms["myform"]["ufn"].value>5)
 	{  
 		msg="good";  
 	}  

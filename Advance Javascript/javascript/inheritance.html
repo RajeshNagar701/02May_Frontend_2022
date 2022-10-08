@@ -9,8 +9,8 @@ Type of inheritance
 
 Single Inheritance.
 Multi-Level Inheritance.
-Hierarchical Inheritance.
 Multiple Inheritance. // not possible by class keywords
+Hierarchical Inheritance.
 Hybrid Inheritance.
 
 
@@ -19,9 +19,45 @@ Hybrid Inheritance.
 
 <script>
 
+class Car 
+{
+	constructor(name, year) 
+	{
+		document.write(this.name = "Ford");
+		document.write(this.year = 2014);
+	}
+	
+    simple()
+	{
+		document.write(this.name = "TATA");
+		document.write(this.year = 1990);
+	}
+
+}
+class service extends Car
+{
+	display()
+	{
+		document.write(this.name = "olxservices");
+		document.write(this.year = 2022);
+	}
+
+}
+
+const mycar = new service;
+mycar.simple()
+mycar.display()
+
+
+
+
+
+
+
+
 
 //Single Inheritance
-
+/*
 class abc
 {
 	sum()
@@ -38,7 +74,7 @@ class xyz extends abc
 {
 	multi()
 	{
-		var a=20;
+		var a=10;
 		var b=20;
 		var multi;
 		multi=a*b;
@@ -51,7 +87,7 @@ class xyz extends abc
 const obj= new xyz();
 obj.sum();
 obj.multi();
-
+*/
 
 /*
 //Multi level Inheritance

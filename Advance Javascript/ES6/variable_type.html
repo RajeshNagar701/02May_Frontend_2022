@@ -1,0 +1,71 @@
+
+<!--
+
+JavaScript Datatypes
+String
+represents sequence of characters e.g. "hello"
+Number
+represents numeric values e.g. 100
+Boolean
+represents boolean value either false or true
+Undefined
+represents undefined value
+Null
+represents null i.e. no value at all
+
+
+JavaScript non-primitive data types
+Object
+represents instance through which we can access members
+Array
+represents group of similar values
+
+
+
+
+JavaScript Variable Scope
+
+The scope of a variable is the region of your program in which it is defined. JavaScript variables have only two scopes.
+
+Global Variables − A global variable has global scope which means it can be defined anywhere in your JavaScript code.
+
+Local Variables − A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.
+
+
+
+Type of variable
+1:) Var
+The variables that are defined with var statement have function scope.
+Before you use a variable in a JavaScript program, you must declare it. Variables are declared with the var keyword as follows.
+var is an ECMAScript1 feature.
+
+2:) Let
+The variables that are defined with let statement have block scope.
+We cannot declare a variable more than once if we defined that previously in the same scope.
+let is a feature of ES6.
+
+3:) Const
+
+value is constant and unchangeble
+
+
+-->
+
+<script>
+
+var a=20;
+document.write(a);
+
+let b=20;
+
+function hello()
+{
+	let b=0;
+	document.write(b);
+}
+	
+hello();
+document.write(b);	
+	
+	
+</script>
