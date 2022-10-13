@@ -32,6 +32,10 @@
     ]
 }
         `;
+		
+		
+		// convert json to object 
+			
         let stringToObject = JSON.parse(jsonData)
 
 
@@ -39,12 +43,22 @@
         //     console.log(stringToObject.products[i])
         // }
 
-        for(const myData of stringToObject.products){
-            document.write(`<p>${myData.id} : ${myData.productName} , Total Quantity :</p>`)
+        for(const myData of stringToObject.products)
+		{
+            document.write(`<p>${myData.id} : ${myData.productName} , Total Quantity : ${myData.Qty}</p>`)
         }
-        // let objectToString = JSON.stringify(stringToObject)
-        // console.log(objectToString)
-        // console.log(stringToObject.TotalEmployee)
+		
+		
+		
+		
+		// convert object to json
+		
+		const myJSON = JSON.stringify(stringToObject);
+		console.log(stringToObject);
+		console.log(myJSON);
+		
+		
+      
     </script>
   </body>
 </html>
