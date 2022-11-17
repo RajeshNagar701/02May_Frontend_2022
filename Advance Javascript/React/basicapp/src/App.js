@@ -10,6 +10,8 @@
 //import Sass_css from "./SASS_CSS/Sass_css";
 
 //import MUI from "./MUI/MUI";
+import Main from "./Props/Header_Task/Main";
+import Main_props from "./Props/Main_props";
 import MainReactBootstrap from "./ReactBootstrap/MainReactBootstrap";
 //import MaintStyle from "./StyledCompo/MaintStyle";
 
@@ -34,8 +36,14 @@ function App() {
      <MUI/> 
      <MaintStyle/>
      <MainReactBootstrap/>
+
+    //props 
+     <Main_props/>
+     <Main/>
+
+
      */}
-     
+    <Main_props/>
      
 
   </>		
