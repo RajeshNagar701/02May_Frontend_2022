@@ -31,11 +31,11 @@ function Func_State() {
             <button onClick={()=>setImage(!image)}>Hide/Show</button>
             <br/>
             <br/>
-            {image? <img src="https://images.news18.com/ibnlive/uploads/2021/08/sachin-tendulkar-52-16287387964x3.jpg" alt="" width="100px" height="100px" /> : null}
+            {image? <img src="https://images.news18.com/ibnlive/uploads/2021/08/sachin-tendulkar-52-16287387964x3.jpg" alt="" width="100px" height="100px" /> : <img src="https://img.jagranjosh.com/imported/images/E/GK/sachin-records.png" width="100px" height="100px"/>}
             <br/>
             <br/>
             <hr />
-            
+
             <button onClick={()=>{
             setMystate({email:"nagaer@gmail.com",mobile:"7777777777"});
             }}>Change State</button>
