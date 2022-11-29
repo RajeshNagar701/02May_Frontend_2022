@@ -2,7 +2,12 @@
 //import './App.css';
 //import Mycomponent from './Mycomponent'
 
-import Func_State from "./States/Func_State";
+import Mainevent_Class from "./event_binding/Mainevent_Class";
+import Mainevent_Func from "./event_binding/Mainevent_Func";
+import Form from "./Form_Handeling/Form";
+import MainLife from "./LifeCycle/MainLife";
+import Main_Funct from "./LifeCycle/Main_Funct";
+//import Func_State from "./States/Func_State";
 
 
 //import Class_Comp from "./Class_Comp/Class_Comp";
@@ -46,9 +51,23 @@ function App() {
 
     // state
      <Class_State/>
+     <Func_State/>
+
+    // Lifecycle
+    <MainLife/>
+    <Main_Funct/>
+
+    //Event Binding
+     <Mainevent_Func/>
+    <Mainevent_Class/>
+     
+    // form handeling
+
      */}
+  
     
-    <Func_State/>
+    <Form/>
+    
 
   </>		
 	
