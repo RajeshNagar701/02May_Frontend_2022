@@ -12,6 +12,8 @@ import Team from "./pages/Team";
 import Testimonial from "./pages/Testimonial";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
       <Routes>
         <Route index element={<><Header/><Index/> <Footer/></> }></Route>
         <Route path="/index" element={<><Header/><Index/> <Footer/></>}></Route>
+        <Route path="/signup" element={<><Header/> <Signup/> <Footer/></>}></Route>
+        <Route path="/login" element={<><Header/> <Login/> <Footer/></>}></Route>
         <Route path="/about" element={<><Header/><About/><Footer/></>}></Route>
         <Route path="/blog" element={<><Header/><Blog/><Footer/></>}></Route>
         <Route path="/contact" element={<><Header/><Contact/><Footer/></>}></Route>
