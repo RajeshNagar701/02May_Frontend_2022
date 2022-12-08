@@ -1,7 +1,16 @@
 import React from 'react'
-import {Link,NavLink} from 'react-router-dom';
-
+import {Link,NavLink,useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 function Header() {
+
+    const redirect=useNavigate(); 
+    function logout()
+    {
+        localStorage.removeItem('email');
+        swal("Success", "Logout Success", "success");
+        redirect('/index')
+    }  
+    
     return (
         <>
 
@@ -57,7 +66,24 @@ function Header() {
                                 </div>
                             </div>
                             <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
-                            <NavLink to="/login" className="nav-item nav-link">Login</NavLink>
+                           
+                               {(() => {
+                                    if(localStorage.getItem('email'))
+                                    {
+                                        return(
+                                        <NavLink to="#" onClick={logout} className="nav-item nav-link">Logout</NavLink>
+                                        )
+                                    }
+                                    else
+                                    {
+                                        return(
+                                        <NavLink to="/login" className="nav-item nav-link">Login</NavLink>
+                                        )
+                                    }
+                                })
+                                ()
+                                }
+                            
                         </div>
                     </div>
                 </nav>

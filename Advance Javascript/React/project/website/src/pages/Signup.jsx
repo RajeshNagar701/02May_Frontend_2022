@@ -9,7 +9,8 @@ function Signup() {
         name:"",
         email:"",
         password:"",
-        mobile:""
+        mobile:"",
+        returnSecureToken:true  // login with authentication
     })
 
     const onchangeHandel=(e)=>{
@@ -20,22 +21,37 @@ function Signup() {
 
     const onsubmitHandel=(e)=>{
         e.preventDefault();
-        fetch('https://miralreact-default-rtdb.firebaseio.com/users.json', {
+
+
+          // signup on firebase auth  https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+          fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDo-M5C6kcZIZA6PxInOL77lOJYZz9VuF4', {
             method: 'POST',
             body: JSON.stringify(formvalue),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
-            })
-            .then((response) => response.json())
-            .then((json) => {
-                swal({
-                    title: "Success!",
-                    text: "You Registered Success!",
-                    icon: "success",
-                  });
-                  setFormvalue({...formvalue,name:"",email:"",password:"",mobile:""}); 
-            });
+        })
+        .then((response) => response.json())
+        .then((json) => {
+
+            fetch('https://miralreact-default-rtdb.firebaseio.com/users.json', {
+                method: 'POST',
+                body: JSON.stringify(formvalue),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                })
+                .then((response) => response.json())
+                .then((json) => {
+                    swal({
+                        title: "Success!",
+                        text: "You Registered Success!",
+                        icon: "success",
+                      });
+                      setFormvalue({...formvalue,name:"",email:"",password:"",mobile:""}); 
+                });
+        });    
+       
 
     }    
 

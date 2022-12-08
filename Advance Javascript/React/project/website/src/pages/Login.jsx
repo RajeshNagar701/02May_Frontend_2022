@@ -1,6 +1,62 @@
-import React from 'react'
-import {Link,NavLink} from 'react-router-dom';
+import React,{useState} from 'react'
+import {Link,NavLink,useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 function Login() {
+
+
+    const redirect=useNavigate();
+    const [formvalue,setFormvalue]=useState({
+        
+        email:"",
+        password:"",
+        returnSecureToken:true  // login with authentication
+    })
+
+    const onchangeHandel=(e)=>{
+
+        setFormvalue({...formvalue,[e.target.name]:e.target.value});
+        console.log(formvalue);
+    }
+    // login with auth https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
+    const onLogin=(e)=>{
+        e.preventDefault();
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDo-M5C6kcZIZA6PxInOL77lOJYZz9VuF4', {
+            method: 'POST',
+            body: JSON.stringify(formvalue),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                //console.log(json)
+                if(json.registered==true)
+                {  
+                    localStorage.setItem('email',json.email);
+                    swal({
+                        title: "Success!",
+                        text: "You Login Success!",
+                        icon: "success",
+                    });
+                    return redirect('/index');
+                }
+                else
+                {
+                    swal({
+                        title: "error!",
+                        text: "You Login Failed due wrong email or password!",
+                        icon: "error",
+                    });
+                    return redirect('/login');
+                }
+                 
+
+            });
+
+    }    
+
+
+
     return (
         <>
             <div>
@@ -31,14 +87,14 @@ function Login() {
                                         <div className="row g-3">
                                             
                                             <div className="col-6">
-                                                <input type="email" name="email" className="form-control bg-light border-0 px-4" placeholder="Your Email" style={{ height: 55 }} />
+                                                <input type="email" name='email' value={formvalue.email} onChange={onchangeHandel} className="form-control bg-light border-0 px-4" placeholder="Your Email" style={{ height: 55 }} />
                                             </div>
                                             <div className="col-6">
-                                                <input type="Password" name="password" className="form-control bg-light border-0 px-4" placeholder="Your Password" style={{ height: 55 }} />
+                                                <input type="password" name='password' value={formvalue.password} onChange={onchangeHandel} className="form-control bg-light border-0 px-4" placeholder="Your password" style={{ height: 55 }} />
                                             </div>
                                           
                                             <div className="col-12">
-                                                <button className="btn btn-secondary w-100 py-3" type="submit">Login</button>
+                                                <button className="btn btn-secondary w-100 py-3" onClick={onLogin} type="submit">Login</button>
                                                 <NavLink to="/signup" style={{color:"white"}}>If You are not rgister  Register Here</NavLink>
                                             </div>
                                         </div>
