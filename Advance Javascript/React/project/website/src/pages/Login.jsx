@@ -29,9 +29,10 @@ function Login() {
             })
             .then((response) => response.json())
             .then((json) => {
-                //console.log(json)
+                console.log(json)
                 if(json.registered==true)
                 {  
+                   
                     localStorage.setItem('email',json.email);
                     swal({
                         title: "Success!",

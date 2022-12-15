@@ -55,23 +55,18 @@ function Header() {
                             <NavLink to="/about" className="nav-item nav-link">About</NavLink>
                             <NavLink to="/service" className="nav-item nav-link">Service</NavLink>
                             <NavLink to="/product" className="nav-item nav-link">Product</NavLink>
-                            <div className="nav-item dropdown">
-                                <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div className="dropdown-menu m-0">
-                                    <NavLink to="/blog" className="dropdown-item">Blog Grid</NavLink>
-                                    <NavLink to="/detail" className="dropdown-item">Blog Detail</NavLink>
-                                    <NavLink to="/feature" className="dropdown-item">Features</NavLink>
-                                    <NavLink to="/team" className="dropdown-item">The Team</NavLink>
-                                    <NavLink to="/testimonial" className="dropdown-item">Testimonial</NavLink>
-                                </div>
-                            </div>
+                          
                             <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
                            
                                {(() => {
                                     if(localStorage.getItem('email'))
                                     {
                                         return(
-                                        <NavLink to="#" onClick={logout} className="nav-item nav-link">Logout</NavLink>
+                                        <>   
+                                            <NavLink to="#" onClick={logout} className="nav-item nav-link">Logout</NavLink>
+                                            <NavLink to="/profile" className="nav-item nav-link">Profile</NavLink>   
+                                            <p className='text-white pt-4'>Hi .. {localStorage.getItem('email')}</p> 
+                                        </>
                                         )
                                     }
                                     else

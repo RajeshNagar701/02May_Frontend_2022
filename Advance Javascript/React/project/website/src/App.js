@@ -14,7 +14,7 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path="/service" element={<><Header/><Service/><Footer/></>}></Route>
         <Route path="/team" element={<><Header/><Team/><Footer/></>}></Route>
         <Route path="/testimonial" element={<><Header/><Testimonial/><Footer/></>}></Route>
+        <Route path="/profile" element={<><Header/><Profile/><Footer/></>}></Route>
       </Routes>
     </BrowserRouter>
     </>
