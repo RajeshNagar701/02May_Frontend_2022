@@ -5,7 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Add_Category from './pages/Add_Category';
 import Manage_Category from './pages/Manage_Category';
 import Manage_user from './pages/Manage_user';
-
+import Edit_user from './pages/Edit_user';
 import Navbar from './component/Navbar';
 
 
@@ -19,7 +19,7 @@ function App() {
         <Route exact  path="/add_category" element={<><Navbar/><Add_Category/></>}></Route>
         <Route exact  path="/manage_category" element={<><Navbar/> <Manage_Category/></>}></Route>
         <Route exact  path="/manage_user" element={<><Navbar/> <Manage_user/></>}></Route>
-        
+        <Route exact  path="/edit_user/:id" element={<><Navbar/> <Edit_user/></>}></Route>
       </Routes>
     
   );

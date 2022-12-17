@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Header from '../component/Header'
 import swal from 'sweetalert';
 function Manage_user() {
 
+    
+        const redirect=useNavigate();   
 // get data
-    useEffect(() => {
+    useEffect(() => {   
         getdata();
     }, []);
 
@@ -107,7 +110,8 @@ function Manage_user() {
                                             <th>Email</th>
                                             <th>Password</th>
                                             <th>Mobile</th>
-                                            <th>Edit</th>
+                                            <th>Edit model</th>
+                                            <th>Edit View</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
@@ -123,6 +127,7 @@ function Manage_user() {
                                                         <td>{alldata[item].password}</td>
                                                         <td>{alldata[item].mobile}</td>
                                                         <td><button className='btn btn-primary' onClick={() => editHandel(item)} data-bs-toggle="modal" data-bs-target="#myModal">Edit</button></td>
+                                                         <td><button className='btn btn-primary' onClick={()=>redirect(`/edit_user/${item}`)}>Edit</button></td>
                                                         <td><button className='btn btn-danger' onClick={() => deleteHandel(item)}>Delete</button></td>
                                                     </tr>
                                                 )
