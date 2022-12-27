@@ -2,11 +2,13 @@
 //import './App.css';
 //import Mycomponent from './Mycomponent'
 
-import Mainevent_Class from "./event_binding/Mainevent_Class";
-import Mainevent_Func from "./event_binding/Mainevent_Func";
-import Form from "./Form_Handeling/Form";
-import MainLife from "./LifeCycle/MainLife";
-import Main_Funct from "./LifeCycle/Main_Funct";
+//import Mainevent_Class from "./event_binding/Mainevent_Class";
+//import Mainevent_Func from "./event_binding/Mainevent_Func";
+//import Form from "./Form_Handeling/Form";
+//import MainLife from "./LifeCycle/MainLife";
+//import Main_Funct from "./LifeCycle/Main_Funct";
+//import UseContextmain from "./UseContext/PropsDrilling/UseContextmain";
+import UseContextmain from "./UseContext/CreateContext/UseContextmain";
 //import Func_State from "./States/Func_State";
 
 
@@ -62,11 +64,14 @@ function App() {
     <Mainevent_Class/>
      
     // form handeling
+    <Form/>
 
+    // props drilling / Use Context
+    <UseContextmain/>
      */}
   
+    <UseContextmain/>
     
-    <Form/>
     
 
   </>		
