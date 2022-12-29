@@ -8,7 +8,8 @@
 //import MainLife from "./LifeCycle/MainLife";
 //import Main_Funct from "./LifeCycle/Main_Funct";
 //import UseContextmain from "./UseContext/PropsDrilling/UseContextmain";
-import UseContextmain from "./UseContext/CreateContext/UseContextmain";
+//import UseContextmain from "./UseContext/CreateContext/UseContextmain";
+import Reducertask from "./useReducer/Reducertask";
 //import Func_State from "./States/Func_State";
 
 
@@ -67,10 +68,13 @@ function App() {
     <Form/>
 
     // props drilling / Use Context
-    <UseContextmain/>
+    <UseContextmain/>// props drilling
+    <UseContextmain/>// use context
      */}
   
-    <UseContextmain/>
+     <Reducertask/>
+
+    
     
     
 
