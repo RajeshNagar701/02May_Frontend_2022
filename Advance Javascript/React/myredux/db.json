@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "email": "Sincere@april.biz",
+        "password":"123456",
+        "mobile": "1234567891"
+      },
+	  {
+        "id": 2,
+        "name": "John Graham",
+        "email": "Sincere@april.biz",
+        "password":"123456",
+        "mobile": "1234567891"
+      }
+    ],
+    "employees": [
+        {
+          "id": 1,
+          "name": "employee Graham",
+          "email": "Sincere@april.biz",
+          "password":"123456",
+          "mobile": "1234567891"
+        }
+      ]
+  }
+
+  
