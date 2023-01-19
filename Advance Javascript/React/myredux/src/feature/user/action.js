@@ -16,3 +16,24 @@ export const getuserdata=()=>{
         })
     }
 }
+
+export const addUser=(data)=>{
+    return function(dispatch){
+        axios.post(`http://localhost:3000/users`,data)
+        .then((resp)=>{
+        })
+        .catch(error=>console.log(error))
+    }
+}
+
+
+export const deleteUser=(id)=>{
+    return function(dispatch){
+        axios.delete(`http://localhost:3000/users/${id}`)
+        .then((resp)=>{
+           
+            dispatch(getuserdata());
+        })
+        .catch(error=>console.log(error))
+    }
+}

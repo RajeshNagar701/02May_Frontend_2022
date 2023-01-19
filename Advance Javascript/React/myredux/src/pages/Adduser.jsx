@@ -1,16 +1,21 @@
 import React,{useState} from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import shortid from 'shortid';
+import { useSelector, useDispatch } from 'react-redux';
+import { addUser } from '../feature/user/action';
+
 
 function Adduser() {
 
-   
+let dispatch=useDispatch();
+let navigate=useNavigate();
+
 const [formvalue, setformvalue] = useState({
     name:"",
-    username:"",
     email:"",
-    phone:"",
-    website:""  
+    password:"",
+    mobile:"",
+    profile:""  
 })
     
 const [error, seterror] = useState("") 
@@ -22,6 +27,14 @@ const [error, seterror] = useState("")
 
  function submithandle(e){
     e.preventDefault();
+    if(!formvalue.name || !formvalue.email || !formvalue.password || !formvalue.mobile || !formvalue.profile)
+    {
+        seterror("All field is required");
+    }
+    else{
+        dispatch(addUser(formvalue))
+        navigate('/');
+    }
     
  }
   return (
@@ -36,22 +49,23 @@ const [error, seterror] = useState("")
                   <label htmlFor="name">Name:</label>
                   <input type="text"className="form-control" value={formvalue.name} onChange={changehandle} id="name" placeholder="Enter name" name="name" />
               </div>
-              <div className="mb-3 mt-3">
-                  <label htmlFor="email">Username:</label>
-                  <input type="text"  className="form-control" value={formvalue.username} onChange={changehandle} id="username" placeholder="Enter username" name="username" />
-              </div>
+              
               <div className="mb-3 mt-3">
                   <label htmlFor="email">Email:</label>
                   <input type="email" className="form-control" value={formvalue.email} onChange={changehandle} id="email" placeholder="Enter email" name="email" />
               </div>
+              <div className="mb-3 mt-3">
+                  <label htmlFor="email">Password:</label>
+                  <input type="password"  className="form-control" value={formvalue.password} onChange={changehandle} id="username" placeholder="Enter password" name="password" />
+              </div>
            
               <div className="mb-3">
                   <label htmlFor="pwd">Phone:</label>
-                  <input type="number"  className="form-control" value={formvalue.phone} onChange={changehandle} id="phone" placeholder="Enter phone" name="phone" />
+                  <input type="number"  className="form-control" value={formvalue.mobile} onChange={changehandle} id="mobile" placeholder="Enter mobile" name="mobile" />
               </div>
               <div className="mb-3">
-                  <label htmlFor="pwd">Website:</label>
-                  <input type="text"  className="form-control" value={formvalue.website} onChange={changehandle} id="website" placeholder="Enter website" name="website" />
+                  <label htmlFor="pwd">Profile url  :</label>
+                  <input type="text"  className="form-control" value={formvalue.profile} onChange={changehandle} id="profile" placeholder="Enter profile" name="profile" />
               </div>
               <button type="submit" onClick={submithandle} className="btn btn-primary">Submit</button>
           </form>

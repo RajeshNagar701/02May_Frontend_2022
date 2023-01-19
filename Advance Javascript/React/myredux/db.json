@@ -1,29 +1,30 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Leanne Graham",
-        "email": "Sincere@april.biz",
-        "password":"123456",
-        "mobile": "1234567891"
-      },
-	  {
-        "id": 2,
-        "name": "John Graham",
-        "email": "Sincere@april.biz",
-        "password":"123456",
-        "mobile": "1234567891"
-      }
-    ],
-    "employees": [
-        {
-          "id": 1,
-          "name": "employee Graham",
-          "email": "Sincere@april.biz",
-          "password":"123456",
-          "mobile": "1234567891"
-        }
-      ]
-  }
-
-  
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "email": "Sincere@april.biz",
+      "password": "123456",
+      "mobile": "1234567891",
+      "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzmAevu3K8CmAVhI_b23CZLl7x8sbkvBlsvg6Xd-Yf&s"
+    },
+    {
+      "name": "priya",
+      "email": "priya@gmail.com",
+      "password": "1234567891",
+      "mobile": "1234567891",
+      "profile": "https://thumbs.dreamstime.com/b/ellis-bridge-ahmedabad-century-old-situated-gujarat-india-bridges-western-eastern-parts-city-across-124476810.jpg",
+      "website": "f",
+      "id": 2
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "employee Graham",
+      "email": "Sincere@april.biz",
+      "password": "123456",
+      "mobile": "1234567891"
+    }
+  ]
+}
